@@ -28,8 +28,6 @@ public class InitializeBrowser extends InitiliazeDriver {
         restRequests = new RestRequests();
         logUtility.createLogFile();
         logUtility.write("Initializing WebDriver");
-        baseURI = "https://reqres.in";
-        basePath = "/api";
         initializeBrowser(Settings.Browser);
         excelUtility = Utilities.getExcelData();
     }

@@ -12,7 +12,6 @@ import java.util.Hashtable;
 import java.util.Map;
 
 public class ExcelUtility {
-    public static ExcelUtility excelUtility;
     static Sheet wrksheet;
     static Workbook wrkbook =null;
     static Hashtable dict= new Hashtable();
