@@ -8,13 +8,15 @@ import framework.config.ConfigReader;
 import framework.config.Settings;
 import framework.utilities.ExcelUtility;
 import framework.utilities.LogUtility;
-import org.testng.annotations.AfterMethod;
+import framework.utilities.serverComponents.requestMethods.RestRequests;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import static io.restassured.RestAssured.*;
 
 public class InitializeBrowser extends InitiliazeDriver {
     public ExcelUtility excelUtility;
     public LogUtility logUtility;
+    public RestRequests restRequests;
     @BeforeTest
     public void setup(){
         //TODO
@@ -23,8 +25,11 @@ public class InitializeBrowser extends InitiliazeDriver {
         ConfigReader.ReadProperty();
         excelUtility = new ExcelUtility();
         logUtility = new LogUtility();
+        restRequests = new RestRequests();
         logUtility.createLogFile();
         logUtility.write("Initializing WebDriver");
+        baseURI = "https://reqres.in";
+        basePath = "/api";
         initializeBrowser(Settings.Browser);
         excelUtility = Utilities.getExcelData();
     }
