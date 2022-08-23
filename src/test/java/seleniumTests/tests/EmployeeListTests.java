@@ -16,14 +16,14 @@ public class EmployeeListTests extends InitializeBrowser{
         CurrentPage.As(EmployeeListPage.class).validateEmployeeIsCreated(restRequests.getSingleUser());
     }
 
-    @Test(dependsOnMethods = { "validateEmployeeCreation" })
+    @Test()
     public void validateEmployeeDeletion(){
-        /*CurrentPage = GetInstance(HomePage.class);
+        CurrentPage = GetInstance(HomePage.class);
         CurrentPage = CurrentPage.As(HomePage.class).clickOnLogInLink();
         CurrentPage = CurrentPage.As(LoginPage.class).loginToPage(excelUtility.ReadCell("UserName", 1), excelUtility.ReadCell("Password",1));
-        CurrentPage = CurrentPage.As(LandingPage.class).clickOnEmployeeListLink();*/
-        CurrentPage = CurrentPage.As(EmployeeListPage.class).deleteEmployee();
-        //CurrentPage = CurrentPage.As(EmployeeListPage.class).searchForAndDeleteAnEmployee("Chano");
+        CurrentPage = CurrentPage.As(LandingPage.class).clickOnEmployeeListLink();
+        //CurrentPage = CurrentPage.As(EmployeeListPage.class).deleteEmployee();
+        CurrentPage = CurrentPage.As(EmployeeListPage.class).searchForAndDeleteAnEmployee(restRequests.getSingleUser());
         CurrentPage = CurrentPage.As(DeleteEmployeePage.class).deleteEmployee();
         CurrentPage.As(EmployeeListPage.class).validateEmployeeIsDeleted(restRequests.getSingleUser());
     }

@@ -13,7 +13,7 @@ public class ConfigReader {
     public static void ReadProperty(){
         Properties prop = new Properties();
         try {
-            String path = "C:\\Users\\Christian Bautista\\IdeaProjects\\CompletelyFunctionalRepoSeleniumWithJava\\src\\main\\java\\framework\\config\\GlobalConfig.properties";
+            String path = "C:\\Users\\Christian Bautista\\IdeaProjects\\CompletelyFunctionalRepoSeleniumWithJavaAndTestNG\\src\\main\\java\\framework\\config\\GlobalConfig.properties";
             InputStream file = new FileInputStream(path);
             prop.load(file);
             Settings.ExcelFileLocation = prop.getProperty("ExcelFileLocation");
